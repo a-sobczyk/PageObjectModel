@@ -11,6 +11,8 @@ public class TestBase {
 
     @Before
     public void setup() {
+
+        System.setProperty("webdriver.chrome.driver", "C:/Drivers/chromedriver.exe");
         driver = new ChromeDriver();
         driver.get("http://przyklady.javastart.pl/jpetstore/");
         driver.manage().window().maximize();

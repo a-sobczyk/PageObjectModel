@@ -24,6 +24,9 @@ public class LoginPage {
     @FindBy(css = "#Content ul[class='messages'] li")
     private WebElement warningMessage;
 
+    @FindBy(xpath = "//li[contains(text(), 'You must sign on before')]")
+    private WebElement singOnMessage;
+
     public LoginPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -47,6 +50,10 @@ public class LoginPage {
 
     public String getWarningMessage() {
         return warningMessage.getText();
+    }
+
+    public String getSingOnWarningMessage() {
+        return wait.until(ExpectedConditions.visibilityOf(singOnMessage)).getText();
     }
 
 }

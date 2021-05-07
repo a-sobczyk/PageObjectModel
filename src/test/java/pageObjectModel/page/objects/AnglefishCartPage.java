@@ -1,10 +1,10 @@
 package pageObjectModel.page.objects;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import pageObjectModel.driver.manager.DriverManager;
+import pageObjectModel.waits.WaitForElement;
 
 import java.util.List;
 
@@ -18,6 +18,7 @@ public class AnglefishCartPage {
     List<WebElement> anglefishAddCartButtons;
 
     public void smallAnglefishAddToCart() {
+        WaitForElement.waitUntilElementIsClickable(anglefishAddCartButtons.get(1));
         anglefishAddCartButtons.get(1).click();
     }
 

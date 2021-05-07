@@ -2,8 +2,6 @@ package pageObjectModel.tests;
 
 import org.junit.After;
 import org.junit.Before;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import pageObjectModel.driver.manager.DriverManager;
 import pageObjectModel.driver.manager.DriverUtils;
 

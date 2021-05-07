@@ -1,12 +1,12 @@
 package pageObjectModel.tests;
 
+import org.junit.Assert;
+import org.junit.Test;
+import org.openqa.selenium.WebElement;
 import pageObjectModel.page.objects.FooterPage;
 import pageObjectModel.page.objects.LandingPage;
 import pageObjectModel.page.objects.LoginPage;
 import pageObjectModel.page.objects.TopMenuPage;
-import org.junit.Assert;
-import org.junit.Test;
-import org.openqa.selenium.WebElement;
 
 public class PositiveLoginTests extends TestBase{
 

@@ -1,20 +1,15 @@
 package pageObjectModel.page.objects;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import pageObjectModel.driver.manager.DriverManager;
+import pageObjectModel.waits.WaitForElement;
 
 public class LoginPage {
 
-    private WebDriverWait wait;
-
     public LoginPage() {
         PageFactory.initElements(DriverManager.getWebDriver(), this);
-        wait = new WebDriverWait(DriverManager.getWebDriver(), 5);
     }
 
     @FindBy(name = "username")
@@ -33,6 +28,7 @@ public class LoginPage {
     private WebElement singOnMessage;
 
     public void typeIntoUserNameField(String userName) {
+        WaitForElement.waitUntilElementsVisible(usernameField);
         usernameField.clear();
         usernameField.sendKeys(userName);
     }
@@ -43,16 +39,17 @@ public class LoginPage {
     }
 
     public void clickOnLoginButton() {
-        wait.until(ExpectedConditions.elementToBeClickable(signOnButton));
         signOnButton.click();
     }
 
     public String getWarningMessage() {
+        WaitForElement.waitUntilElementsVisible(warningMessage);
         return warningMessage.getText();
     }
 
     public String getSingOnWarningMessage() {
-        return wait.until(ExpectedConditions.visibilityOf(singOnMessage)).getText();
+        WaitForElement.waitUntilElementsVisible(singOnMessage);
+        return singOnMessage.getText();
     }
 
 }

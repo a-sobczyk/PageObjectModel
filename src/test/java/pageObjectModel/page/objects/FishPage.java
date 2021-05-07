@@ -1,10 +1,10 @@
 package pageObjectModel.page.objects;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import pageObjectModel.driver.manager.DriverManager;
+import pageObjectModel.waits.WaitForElement;
 
 public class FishPage {
 
@@ -16,6 +16,7 @@ public class FishPage {
     WebElement anglefish;
 
     public void angelfishClick() {
+        WaitForElement.waitUntilElementIsClickable(anglefish);
         anglefish.click();
     }
 }

@@ -4,17 +4,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import pageObjectModel.driver.manager.DriverManager;
 
 public class TopMenuPage {
-
-    private WebDriver driver;
 
     @FindBy(css = "#MenuContent a[href*='signonForm']")
     private WebElement signOnLink;
 
-    public TopMenuPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
+    public TopMenuPage() {
+        PageFactory.initElements(DriverManager.getWebDriver(), this);
     }
 
     public void clickOnSignInLink(){

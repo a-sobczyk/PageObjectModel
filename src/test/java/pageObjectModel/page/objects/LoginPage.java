@@ -6,11 +6,16 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import pageObjectModel.driver.manager.DriverManager;
 
 public class LoginPage {
 
-    private WebDriver driver;
     private WebDriverWait wait;
+
+    public LoginPage() {
+        PageFactory.initElements(DriverManager.getWebDriver(), this);
+        wait = new WebDriverWait(DriverManager.getWebDriver(), 5);
+    }
 
     @FindBy(name = "username")
     private WebElement usernameField;
@@ -26,12 +31,6 @@ public class LoginPage {
 
     @FindBy(xpath = "//li[contains(text(), 'You must sign on before')]")
     private WebElement singOnMessage;
-
-    public LoginPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
-        wait = new WebDriverWait(driver, 5);
-    }
 
     public void typeIntoUserNameField(String userName) {
         usernameField.clear();

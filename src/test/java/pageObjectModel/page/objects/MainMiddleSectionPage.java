@@ -12,7 +12,7 @@ public class MainMiddleSectionPage {
         PageFactory.initElements(DriverManager.getWebDriver(), this);
     }
 
-    @FindBy(xpath = "//area[@alt='Fish']")
+    @FindBy(css = "area[alt='Fish']")
     WebElement fishLink;
 
     public void fishLinkClick() {

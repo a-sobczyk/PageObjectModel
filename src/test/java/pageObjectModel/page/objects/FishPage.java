@@ -1,5 +1,7 @@
 package pageObjectModel.page.objects;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -7,6 +9,8 @@ import pageObjectModel.driver.manager.DriverManager;
 import pageObjectModel.waits.WaitForElement;
 
 public class FishPage {
+
+    Logger logger = LogManager.getRootLogger();
 
     public FishPage() {
         PageFactory.initElements(DriverManager.getWebDriver(), this);
@@ -18,5 +22,6 @@ public class FishPage {
     public void angelfishClick() {
         WaitForElement.waitUntilElementIsClickable(anglefish);
         anglefish.click();
+        logger.info("Clicked on Angelfish button");
     }
 }

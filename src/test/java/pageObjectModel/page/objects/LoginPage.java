@@ -31,22 +31,25 @@ public class LoginPage {
     @FindBy(xpath = "//li[contains(text(), 'You must sign on before')]")
     private WebElement singOnMessage;
 
-    public void typeIntoUserNameField(String userName) {
+    public LoginPage typeIntoUserNameField(String userName) {
         WaitForElement.waitUntilElementsVisible(usernameField);
         usernameField.clear();
         usernameField.sendKeys(userName);
         logger.info("Typed into User Name field: {}", userName);
+        return this;
     }
 
-    public void typeIntoPasswordField(String password) {
+    public LoginPage typeIntoPasswordField(String password) {
         passwordField.clear();
         passwordField.sendKeys(password);
         logger.info("Typed into Password field: {}", password);
+        return this;
     }
 
-    public void clickOnLoginButton() {
+    public FooterPage clickOnLoginButton() {
         signOnButton.click();
         logger.info("Clicked on Login Button");
+        return new FooterPage();
     }
 
     public String getWarningMessage() {

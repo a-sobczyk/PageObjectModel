@@ -19,9 +19,10 @@ public class ShoppingCartPage {
     @FindBy(xpath = "//a[contains(text(),'Proceed to Checkout')]")
     WebElement proceedToCheckoutButton;
 
-    public void clickProceedToCheckoutButton() {
+    public LoginPage clickProceedToCheckoutButton() {
         WaitForElement.waitUntilElementIsClickable(proceedToCheckoutButton);
         proceedToCheckoutButton.click();
         logger.info("Clicked on Proceed to Checkout button on the Shopping Cart page");
+        return new LoginPage();
     }
 }

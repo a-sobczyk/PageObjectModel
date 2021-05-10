@@ -19,9 +19,10 @@ public class FishPage {
     @FindBy(xpath = "//a[contains(text(),'FI-SW-01')]")
     WebElement anglefish;
 
-    public void angelfishClick() {
+    public AnglefishCartPage angelfishClick() {
         WaitForElement.waitUntilElementIsClickable(anglefish);
         anglefish.click();
         logger.info("Clicked on Angelfish button");
+        return new AnglefishCartPage();
     }
 }

@@ -21,10 +21,11 @@ public class AnglefishCartPage {
     @FindBy(xpath = "//a[@class='Button']")
     List<WebElement> anglefishAddCartButtons;
 
-    public void smallAnglefishAddToCart() {
+    public ShoppingCartPage smallAnglefishAddToCart() {
         WaitForElement.waitUntilElementIsClickable(anglefishAddCartButtons.get(1));
         anglefishAddCartButtons.get(1).click();
         logger.info("Clicked small angelfish add to cart button");
+        return new ShoppingCartPage();
     }
 
 }

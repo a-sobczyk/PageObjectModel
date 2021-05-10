@@ -13,19 +13,13 @@ public class ShoppingCartTest extends TestBase {
         landingPage.clickOnEnterStoreLink();
 
         MainMiddleSectionPage mainMiddleSectionPage = new MainMiddleSectionPage();
-        mainMiddleSectionPage.fishLinkClick();
+        String singOnWarningMessage = mainMiddleSectionPage
+                .fishLinkClick()
+                .angelfishClick()
+                .smallAnglefishAddToCart()
+                .clickProceedToCheckoutButton()
+                .getSingOnWarningMessage();
 
-        FishPage fishPage = new FishPage();
-        fishPage.angelfishClick();
-
-        AnglefishCartPage anglefishCartPage = new AnglefishCartPage();
-        anglefishCartPage.smallAnglefishAddToCart();
-
-        ShoppingCartPage shoppingCartPage = new ShoppingCartPage();
-        shoppingCartPage.clickProceedToCheckoutButton();
-
-        LoginPage loginPage = new LoginPage();
-
-        Assert.assertEquals("You must sign on before attempting to check out. Please sign on and try checking out again.", loginPage.getSingOnWarningMessage());
+        Assert.assertEquals("You must sign on before attempting to check out. Please sign on and try checking out again.", singOnWarningMessage);
     }
 }

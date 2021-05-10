@@ -15,8 +15,9 @@ public class MainMiddleSectionPage {
     @FindBy(css = "area[alt='Fish']")
     WebElement fishLink;
 
-    public void fishLinkClick() {
+    public FishPage fishLinkClick() {
         WaitForElement.waitUntilElementIsClickable(fishLink);
         fishLink.click();
+        return new FishPage();
     }
 }

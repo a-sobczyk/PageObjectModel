@@ -19,10 +19,10 @@ public class FooterPage {
         PageFactory.initElements(DriverManager.getWebDriver(), this);
     }
 
-    public WebElement getBannerAfterLoginLogo() {
+    public boolean getBannerAfterLoginLogo() {
         WaitForElement.waitUntilElementsVisible(banner);
         boolean isDisplayed = banner.isDisplayed();
         logger.info("Returning status of banner after login: {}", isDisplayed);
-        return banner;
+        return isDisplayed;
     }
 }

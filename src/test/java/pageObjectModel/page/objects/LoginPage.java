@@ -66,4 +66,9 @@ public class LoginPage {
         return singOnWarningMessage;
     }
 
+    public boolean loginButtonIsDisplayed() {
+        WaitForElement.waitUntilElementsVisible(signOnButton);
+        return signOnButton.isDisplayed();
+    }
+
 }

@@ -15,6 +15,9 @@ public class TopMenuPage {
     @FindBy(css = "#MenuContent a[href*='signonForm']")
     private WebElement signOnLink;
 
+    @FindBy(id = "LogoContent")
+    private WebElement logo;
+
     public TopMenuPage() {
         PageFactory.initElements(DriverManager.getWebDriver(), this);
     }
@@ -24,5 +27,10 @@ public class TopMenuPage {
         signOnLink.click();
         logger.info("Clicked on Sing on Link");
         return new LoginPage();
+    }
+
+    public boolean storeLogoIsDisplayed() {
+        WaitForElement.waitUntilElementsVisible(logo);
+        return logo.isDisplayed();
     }
 }

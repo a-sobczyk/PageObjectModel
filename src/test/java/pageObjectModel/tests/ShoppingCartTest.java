@@ -1,8 +1,9 @@
 package pageObjectModel.tests;
 
-import org.junit.Assert;
-import org.junit.Test;
-import pageObjectModel.page.objects.*;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+import pageObjectModel.page.objects.LandingPage;
+import pageObjectModel.page.objects.MainMiddleSectionPage;
 
 public class ShoppingCartTest extends TestBase {
 

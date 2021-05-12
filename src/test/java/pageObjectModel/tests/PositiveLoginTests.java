@@ -1,12 +1,8 @@
 package pageObjectModel.tests;
 
-import org.junit.Assert;
-import org.junit.Test;
-import org.openqa.selenium.WebElement;
-import pageObjectModel.page.objects.FooterPage;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 import pageObjectModel.page.objects.LandingPage;
-import pageObjectModel.page.objects.LoginPage;
-import pageObjectModel.page.objects.TopMenuPage;
 
 public class PositiveLoginTests extends TestBase{
 
@@ -22,6 +18,6 @@ public class PositiveLoginTests extends TestBase{
                 .clickOnLoginButton()
                 .getBannerAfterLoginLogo();
 
-                Assert.assertTrue(isBannerAfterLoginDisplayed);
+        Assert.assertTrue(isBannerAfterLoginDisplayed);
     }
 }

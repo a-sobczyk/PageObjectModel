@@ -1,8 +1,8 @@
 package pageObjectModel.tests;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import pageObjectModel.configuration.ConfigurationProperties;
 import pageObjectModel.configuration.PropertiesLoader;
 import pageObjectModel.driver.manager.DriverManager;
@@ -19,14 +19,14 @@ public class TestBase {
         ConfigurationProperties.setProperties(propertiesFromFile);
     }
 
-    @Before
+    @BeforeMethod
     public void setup() {
         DriverManager.getWebDriver();
         DriverUtils.navigateToPage("http://przyklady.javastart.pl/jpetstore/");
         DriverUtils.setInitialConfiguration();
     }
 
-    @After
+    @AfterMethod
     public void tearDown() {
         DriverManager.disposeDriver();
     }

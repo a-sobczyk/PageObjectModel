@@ -1,7 +1,7 @@
 package pageObjectModel.tests;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 import pageObjectModel.driver.manager.DriverUtils;
 import pageObjectModel.page.objects.LandingPage;
 import pageObjectModel.page.objects.TopMenuPage;
